@@ -14,9 +14,8 @@
 <hr>
 <div>
   <div ng-controller='ToBuyController as items' style="width: 50%;float:left;background-color:pink">
-<div ng-if="items.list.length">
   <h1 style=" text-align:center " > To buy </h1> 
- </div>
+
  <div ng-if="!items.list.length">
   <h1 style=" text-align:center " > Everything bought </h1> 
  </div>
@@ -30,9 +29,7 @@ Buy : {{item.quantity}} {{item.name}}
      </ol>
  </div>
 <div ng-controller='AlreadyBoughtController as items' style="float:right;width:50%;background-color:magenta">
-    <div ng-if="items.bought.length">
   <h1 style=" text-align:center " > Already Bought </h1> 
- </div>
  <div ng-if="!items.bought.length">
   <h1 style=" text-align:center " > Nothing Bought Yet </h1> 
  </div> 
