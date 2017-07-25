@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app='ShoppingListApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Shopping Calculator using Javascript</title>
+  </head>
+  <body  >
+    <h1> Shopping Calculator</h1>
+    <div >
+      <h3>Items to be Inserted:<h3>
+        </div>
+<hr>
+<div>
+  <div ng-controller='ToBuyController as items' style="width: 50%;float:left;background-color:pink">
+<div ng-if="items.list.length">
+  <h1 style=" text-align:center " > To buy </h1> 
+ </div>
+ <div ng-if="!items.list.length">
+  <h1 style=" text-align:center " > Everything bought </h1> 
+ </div>
+ <ol >
+
+       <li ng-repeat="item in items.list">
+Buy : {{item.quantity}} {{item.name}}
+          <button ng-click="items.sright($index)">Add Item To Shopping List</button>
+
+           </li>
+     </ol>
+ </div>
+<div ng-controller='AlreadyBoughtController as items' style="float:right;width:50%;background-color:magenta">
+    <div ng-if="items.bought.length">
+  <h1 style=" text-align:center " > Already Bought </h1> 
+ </div>
+ <div ng-if="!items.bought.length">
+  <h1 style=" text-align:center " > Nothing Bought Yet </h1> 
+ </div> 
+	 <ol >
+            <li ng-repeat="item in items.bought">
+     {{item.quantity}} {{item.name}}
+               <button ng-click="items.sleft($index)">Cancel the item</button>
+              </li>
+          </ol>
+
+   </div>
+ </div>
+  </body>
+</html>
